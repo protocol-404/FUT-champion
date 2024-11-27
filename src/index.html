@@ -1,18 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Under Maintenance</title>
-  <link rel="stylesheet" href="output.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats</title>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="text-center max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-    <img src="https://via.placeholder.com/150" alt="Maintenance" class="w-32 mx-auto mb-6">
-    <h1 class="text-2xl font-semibold text-gray-800 mb-4">We'll Be Back Soon!</h1>
-    <p class="text-gray-600 mb-6">
-      Our website is currently undergoing scheduled maintenance. We should be back shortly. Thank you for your patience!
-    </p>
-  </div>
+<body>
+    <main>
+        <h1>Player Stats</h1>
+
+        <div class="coco-container">
+            <div id="player-stadium">
+                <div class="player" style="grid-area: rw;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Ribery">
+                    <span>Ribery</span>
+                </div>
+                <div class="player" style="grid-area: cm1;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Dante">
+                    <span>Dante</span>
+                </div>
+                <div class="player" style="grid-area: st;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Pizarro">
+                    <span>Pizarro</span>
+                </div>
+                <div class="player" style="grid-area: cm2;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Martinez">
+                    <span>Martinez</span>
+                </div>
+                <div class="player" style="grid-area: cm;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Schweinsteiger">
+                    <span>Schweinsteiger</span>
+                </div>
+                <div class="player" style="grid-area: rb;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Lahm">
+                    <span>Lahm</span>
+                </div>
+                <div class="player" style="grid-area: cb1;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Benatia">
+                    <span>Benatia</span>
+                </div>
+                <div class="player" style="grid-area: cb2;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Lahm">
+                    <span>Lahm</span>
+                </div>
+                <div class="player" style="grid-area: lb;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Alaba">
+                    <span>Alaba</span>
+                </div>
+                <div class="player" style="grid-area: gk;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Neuer">
+                    <span>Neuer</span>
+                </div>
+                <div class="player" style="grid-area: lw;">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Ribery">
+                    <span>Ribery</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .coco-container {
+            width: 500px;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+            perspective: 1000px;
+            transform: scale(0.7);
+        }
+
+        #player-stadium {
+            display: grid;
+            background-image: url("./assets/studuim.png");
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            transform: rotateX(35deg);
+            grid-template-areas:
+                ". . st . ."
+                "rw . . . lw"
+                ". cm1 . cm2 ."
+                ". . cm . ."
+                "rb . . . lb"
+                ". cb1 . cb2 ."
+                ". . gk . .";
+            position: relative;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .player {
+            text-align: center;
+            position: relative;
+            background: url('./assets/badge_gold.webp') no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            padding: 10px;
+            width: 80px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .player img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid white;
+            z-index: 2;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .player span {
+            font-size: 12px;
+            z-index: 3;
+            text-align: center;
+        }
+    </style>
 </body>
 </html>
